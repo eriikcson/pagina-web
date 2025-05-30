@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inteligencia Artificial: Guía Completa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #e0f7fa;
+      line-height: 1.6;
+      padding: 20px;
+      overflow-x: hidden;
+      animation: pageFadeIn 1.2s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    @keyframes pageFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+      font-size: 3rem;
+      color: #00ffe7;
+      letter-spacing: 2px;
+      animation: flicker 1.8s infinite alternate;
+      user-select: none;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; text-shadow: 0 0 8px #00ffe7, 0 0 15px #00ffe7; }
+      50% { opacity: 0.7; text-shadow: 0 0 3px #00b4a2, 0 0 8px #00b4a2; }
+    }
+
+    section {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 15px rgba(0, 255, 230, 0.3);
+      transform: translateY(40px);
+      opacity: 0;
+      animation: fadeUp 0.9s forwards;
+      animation-delay: 0.4s;
+    }
+
+    /* Animación fadeUp con delay variable */
+    section:nth-child(2) { animation-delay: 0.4s; }
+    section:nth-child(3) { animation-delay: 0.6s; }
+    section:nth-child(4) { animation-delay: 0.8s; }
+    section:nth-child(5) { animation-delay: 1s; }
+    section:nth-child(6) { animation-delay: 1.2s; }
+    section:nth-child(7) { animation-delay: 1.4s; }
+    section:nth-child(8) { animation-delay: 1.6s; }
+    section:nth-child(9) { animation-delay: 1.8s; }
+    section:nth-child(10) { animation-delay: 2s; }
+    section:nth-child(11) { animation-delay: 2.2s; }
+    section:nth-child(12) { animation-delay: 2.4s; }
+    section:nth-child(13) { animation-delay: 2.6s; }
+    section:nth-child(14) { animation-delay: 2.8s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffe7;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    p, ul {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1.2rem;
+    }
+
+    ul li::before {
+      content: "⚡ ";
+      color: #00ffe7;
+    }
+
+    .image-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 15px;
+    }
+
+    .image-section img {
+      width: 320px;
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 12px #00ffe7;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      animation: imageFadeIn 1s forwards;
+    }
+
+    /* Aparece con delay */
+    .image-section img:nth-child(1) { animation-delay: 0.8s; }
+    .image-section img:nth-child(2) { animation-delay: 1s; }
+    .image-section img:nth-child(3) { animation-delay: 1.2s; }
+    .image-section img:nth-child(4) { animation-delay: 1.4s; }
+    .image-section img:nth-child(5) { animation-delay: 1.6s; }
+
+    @keyframes imageFadeIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .image-section img:hover {
+      transform: scale(1.08) rotate(2deg);
+      box-shadow: 0 0 25px #00fff0;
+      filter: drop-shadow(0 0 6px #00fff0);
+    }
+
+    footer {
+      text-align: center;
+      color: #00b4a2;
+      font-size: 0.9rem;
+      margin-top: 60px;
+      letter-spacing: 1px;
+      user-select: none;
+    }
+
+    /* Responsive para móviles */
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 2.1rem;
+      }
+      section {
+        padding: 18px;
+        margin-bottom: 30px;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      .image-section {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .image-section img {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Inteligencia Artificial: Guía Completa</h1>
+  </header>
+
+  <section>
+    <p>Bienvenido a esta guía donde descubrirás cómo la inteligencia artificial está transformando el mundo y qué podemos esperar del futuro.</p>
+  </section>
+
+  <section>
+    <h2>¿Qué es la Inteligencia Artificial?</h2>
+    <p>La IA es la capacidad de las máquinas para imitar funciones cognitivas humanas como el aprendizaje, la resolución de problemas y la toma de decisiones.</p>
+    <div class="image-section">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Artificial_Intelligence_Logo.svg" alt="Logo IA" />
+    </div>
+  </section>
+
+  <section>
+    <h2>Tipos de Inteligencia Artificial</h2>
+    <ul>
+      <li><strong>IA débil:</strong> Especializada en tareas específicas (ej. Siri, ChatGPT).</li>
+      <li><strong>IA general:</strong> Capaz de aprender y razonar como un humano (en desarrollo).</li>
+      <li><strong>IA superinteligente:</strong> Más inteligente que el ser humano (teórica).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🤖 Robots Inteligentes</h2>
+    <p>Robots como Atlas, Spot y Sophia demuestran increíbles habilidades físicas y sociales gracias a la IA.</p>
+    <div class="image-section">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Atlas_from_Boston_Dynamics.jpg" alt="Atlas robot" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Sophia_robot_2018.jpg/640px-Sophia_robot_2018.jpg" alt="Sophia robot" />
+    </div>
+  </section>
+
+  <section>
+    <h2>🚘 Tesla y Conducción Autónoma</h2>
+    <p>Los vehículos Tesla utilizan sensores, cámaras y redes neuronales para lograr la conducción autónoma avanzada.</p>
+    <div class="image-section">
+      <img src="https://cdn.motor1.com/images/mgl/0ANqJ/s1/tesla-autopilot.jpg" alt="Tesla Autopilot" />
+      <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/c5d48d7a-6e1c-4378-becf-523d01449c39/bvlatuR/std/1920x1080/M3-Exterior-Grid-A-Desktop" alt="Tesla Car" />
+    </div>
+  </section>
+
+  <section>
+    <h2>🎮 IA en Videojuegos</h2>
+    <p>La IA permite crear enemigos inteligentes, mundos generados automáticamente y experiencias personalizadas para cada jugador.</p>
+    <div class="image-section">
+      <img src="https://cdn.pixabay.com/photo/2017/06/27/08/43/game-2445706_1280.jpg" alt="Videojuegos IA" />
+    </div>
+  </section>
+
+  <section>
+    <h2>🧠 ¿Cómo aprende una IA?</h2>
+    <p>La IA aprende con datos mediante técnicas como el aprendizaje supervisado, no supervisado y reforzado.</p>
+    <div class="image-section">
+      <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xkqX_f_Wkz0fn5z9JX2nGQ.png" alt="Aprendizaje de IA" />
+    </div>
+  </section>
+
+  <section>
+    <h2>🔧 Tecnologías utilizadas</h2>
+    <ul>
+      <li>Redes neuronales artificiales</li>
+      <li>Deep Learning</li>
+      <li>GPUs y TPUs</li>
+      <li>Big Data</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🛡️ IA en Seguridad</h2>
+    <p>Desde cámaras con reconocimiento facial hasta la detección avanzada de ciberataques, la IA es clave en seguridad.</p>
+    <div class="image-section">
+      <img src="https://www.analyticsinsight.net/wp-content/uploads/2021/08/Artificial-Intelligence-in-Cybersecurity.jpg" alt="IA en seguridad" />
+    </div>
+  </section>
+
+  <section>
+    <h2>🧬 IA en Medicina</h2>
+    <p>La IA mejora el diagnóstico por imagen, las cirugías asistidas y la predicción de enfermedades.</p>
+    <div class="image-section">
+      <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/AI_in_Medical_Field.jpg" alt="IA en medicina" />
+    </div>
+  </section>
+
+  <section>
+    <h2>📚 IA en Educación</h2>
+    <p>Permite clases personalizadas, tutores virtuales y detección temprana de dificultades de aprendizaje.</p>
+    <div class="image-section">
+      <img src="https://elearningindustry.com/wp-content/uploads/2022/05/shutterstock_2034389729.jpg" alt="IA en educación" />
+    </div>
+  </section>
+
+  <section>
+    <h2>✅ Ventajas y ⚠️ Desventajas</h2>
+    <ul>
+      <li><strong>Ventajas:</strong> Eficiencia, precisión, ahorro de tiempo, innovación.</li>
+      <li><strong>Desventajas:</strong> Riesgo de desempleo, privacidad, dependencia tecnológica.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🌐 Empresas líderes en IA</h2>
+    <ul>
+      <li>OpenAI, Google DeepMind, Tesla, Microsoft, Meta, Amazon, IBM</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🔮 Futuro de la IA</h2>
+    <ul>
+      <li>Robots domésticos inteligentes</li>
+      <li>Interfaces cerebro-computadora</li>
+      <li>IA general autónoma</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📌 Conclusión</h2>
+    <p>La Inteligencia Artificial ya forma parte de nuestras vidas y seguirá transformando la manera en que vivimos, trabajamos y aprendemos.</p>
+  </section>
+
+  <footer>
+    Página creada por <strong>Ericsson Pérez</strong> | Proyecto escolar 2025
+  </footer>
+</body>
+</html>
+
